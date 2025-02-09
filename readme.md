@@ -64,50 +64,61 @@ dotnet ef database update
 # we can use any database viewer like dbweaver/sqllite we will use sqlite
 # make sure you have the extension installed for sqlite then go shift + command + P (MAC) and type sqlite select is and further it will show the database to select you will now have SQLLITE EXPLORER as part of your project
 
-Now goto the Client side Angular setup https://angular.dev/reference/versions
-1 Install Node (brew install node for mac) or check if it is already installed node --version
-2 Install npm (npm install -g @angular/cli@19 version 19) or check if it is already installed npm --version
-3 Create the Client project by using ng new TaskHandler <TaskHandler is the name used>
-4 Goto the TaskHandler folder and use ng serve to run the application
+# Now goto the Client side Angular setup https://angular.dev/reference/versions
+# 1 Install Node (brew install node for mac) or check if it is already installed 
+node --version
+# 2 Install npm (npm install -g @angular/cli@19 version 19) or check if it is 
+already installed npm --version
+# 3 Create the Client project by using ng new TaskHandler 
+# <TaskHandler> is the name used
+# 4 Goto the TaskHandler folder and use ng serve to run the application
 
-Install Angular Language Service from marketplace
-Go to Code Settings Settings and search for Breackets and set to always
+# Install Angular Language Service from marketplace
+# Go to Code Settings Settings and search for Breackets and set to always
 
-Set communication between the client and api using cors
-Now we will need the ngx-bootstrp libarary for bootstrap functionality in angular way
-NOTE: SHOULD BE INSTALLED IN CLIENT DIRECTORY NOT IN THE API
-here is the command to install check angular version compatibility with ngx-bootstrap
-  Add following in the package.json
-  "overrides": {
-    "ngx-bootstrap":{
-      "@angular/common": "@angular.common",
-      "@angular/core": "@angular.core",
-      "@angular/animations": "@angular.animations",
-      "@angular/forms": "@angular.forms"
-    }
-  }
+# Set communication between the client and api using cors
+# Now we will need the ngx-bootstrp libarary for bootstrap functionality in # angular way
+# NOTE: SHOULD BE INSTALLED IN CLIENT DIRECTORY NOT IN THE API
+# here is the command to install check angular version compatibility
+# installed version 19
+npm install ngx-bootstrap@19 bootstrap font-awesome
 
-  Also add the following in the angular.json not in the test section
-  and before the existing stylesheets in "styles" section
+#  Also add the following in the angular.json not in the test section
+#  and before the existing stylesheets in "styles" section
 
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "node_modules/font-awesome/css/font-awesome.min.css",
 
-Setting up https for client site
-make sure you have homebrew installed. While in the client folder sptop the server
-and run the following command homebrew for mac
+# Setting up https for client site
+# make sure you have homebrew installed. While in the client folder sptop the server
+# and run the following command homebrew for mac
 brew install mkcert
-                Or use chocolatey for windows
-                brew install mkcert
-not in the client folder run mkcert -install
-you should get the following message
-The local CA is now installed in the system trust store!
-Now create a ssl folder and goto the ssl folder and run mkcert command
-this will create your key in the ssl folder.
-Now goto angular.json file and under the serve section on verytop add the following
+#                Or use chocolatey for windows
+#                brew install mkcert
+# not in the client folder 
+run mkcert -install
+# you should get the following message
+# The local CA is now installed in the system trust store!
+# Now create a ssl folder and goto the ssl folder and run mkcert command
+# this will create your key in the ssl folder.
+# Now goto angular.json file and under the serve section on verytop add the following
           "options":{
             "ssl": true,
             "sslCert":"./ssl/localhost.pem",
             "sslKey":"./ssl/localhost-key.pem"
           },
-Now on ng serve you will see the certificate is applied
+# Now on ng serve you will see the certificate is applied
+
+# Adding the salt password and hash password
+# dotnet ef migrations add "UserEntityUpdated" no need to specify location as it is already set make sure you are in the API folder
+# to verify the dotnet-ef use the following command to verify the installed
+dotnet tool list -g
+# if no version is installed install dotnet-ef from nuget-org and search for dotnet-ef
+dotnet ef migrations add UserEntityUpdated
+# once that works do the following to update the database table
+dotnet ef database update
+# For JWT need nuget package for system.identitymodel.token.jwt and must be inserted in
+# DevPulse.csproj 
+        <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.4.0" />
+# for getting the token following nuget package is needed
+        Microsoft.AspNetCore.Authentication.JwtBearer

@@ -1,15 +1,20 @@
 using DevPulse.Data;
 using DevPulse.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
-namespace DevPulse;
+namespace DevPulse.Controllers;
 
-[ApiController]
-[Route("devpulse/[controller]")] //localhost/devpusle/users the users (replaced by first part of namespace that is UsersController)
+//[ApiController]
+//[Route("devpulse/[controller]")] //localhost/devpusle/users the users (replaced by first part of namespace that is UsersController)
+//Initially we created these here but nuw since we created a BaseDevPulseController this code will be moved there and ControllerBase will be replaced by it
 
-public class UsersController(DataContext context) : ControllerBase
+//public class UsersController(DataContext context) : ControllerBase
+public class UsersController(DataContext context) : BaseDevPulseController
 {
+
+    [AllowAnonymous]
     //We can only have one HttpGet method in the controller
     [HttpGet]//1st API end point get request
 
@@ -35,6 +40,7 @@ public class UsersController(DataContext context) : ControllerBase
     }
 
 
+    [Authorize]
     //Since We can only have one HttpGet method in the controller
     //We can use the HttpGet method to get a single user by passing parameter
     //This way we can sreat multiple requests to the same endpoint

@@ -1,19 +1,10 @@
-using DevPulse.Data;
-using Microsoft.EntityFrameworkCore;
+using DevPulse.Extensions;
 
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers();
-//Add the DataContext service to the container
-//<DataContext> will create a new instance of DataContext
-//will receive the option from the DataContext class
-//Set option for the database to use SQLite
-builder.Services.AddDbContext<DataContext>(options =>
-    options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
-
-//needed for setting cors
-builder.Services.AddCors();
+builder.Services.AddApplicationservices(builder.Configuration);
+builder.Services.AddIdentityServices(builder.Configuration);
 
 var app = builder.Build();
 
@@ -22,6 +13,10 @@ var app = builder.Build();
 app.UseCors(x => x.AllowAnyHeader().AllowAnyMethod()
     .WithOrigins("http://localhost:4200","https://localhost:4200"));
 
+//Now add the Authintication middleware here
+//and must be in the same order and just before MapControllers();
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

@@ -482,4 +482,4 @@ $RECYCLE.BIN/
 
 # Vim temporary swap files
 *.swp
-DevPulse/appsettings.json
+# DevPulse/appsettings.json
