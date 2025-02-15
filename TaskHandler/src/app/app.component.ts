@@ -1,26 +1,31 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, inject, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { NavComponent } from "./nav/nav.component";
+import { AccountService } from './_services/account.service';
+import { HomeComponent } from "./home/home.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [RouterOutlet, NavComponent, HomeComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
 export class AppComponent implements OnInit  {
-  //Set ability to make http requests to this components
-  http = inject(HttpClient);
-  title = 'CT Task Handler';
-  users: any;//this is used for the ngOnInit step to cors in ts file
+  
+  private accountService = inject(AccountService);
 
  // This is where you make your http calls
   ngOnInit(): void {
-    this.http.get('http://localhost:5083/devpulse/users').subscribe({
-      next: response => this.users = response,
-      error: error => console.log(error),
-      complete: () =>console.log('Request has completed')
-      //once the complete is reached the http request always completes so we do not need to unsubscribe
-    })
+    this.setCurrentUser();
   }
+
+  //Read the user from local storage and set the current user
+  //This is so that when the page is refreshed the user is still logged in
+setCurrentUser() {
+  const userString = localStorage.getItem('user');
+  if (!userString) return;  
+  const user = JSON.parse(userString);
+  this.accountService.currentUser.set(user);
+}
+
 }

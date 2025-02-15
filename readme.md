@@ -122,3 +122,17 @@ dotnet ef database update
         <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.4.0" />
 # for getting the token following nuget package is needed
         Microsoft.AspNetCore.Authentication.JwtBearer
+
+# creating an angular component
+# ng g c where c is for component
+# where nav is the name of the component
+# dry run first to see what will be created and then to --skip-test to create all but the test files
+ng g c nav --dry-run 
+ng g c nav --skip-tests
+
+# creating an angular _services folder with account.service ts file
+# ng g s where s is for services
+ng g s _services/account --skip-tests
+# use localStorage to save token information in the local client storage (like registery in lagacy code)
+
+# NOTE when creating a new component in the ts file under the @Components, under imports must include FormModule
