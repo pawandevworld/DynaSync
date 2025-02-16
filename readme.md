@@ -1,39 +1,38 @@
-#Create a New Folder with Solution Name
-#Open the Solution Folder from xCode
-#Open CLI and run
+# Create a New Folder with Solution Name
+# Open the Solution Folder from xCode
+# Open CLI and run
         dotnet new sln
-        this will create a solution with same name as the Folder
-#Now Run
+#        this will create a solution with same name as the Folder
+# Now Run
         dotnet new webapi -controllers -n API  #API can be replaced by any Name you prefer
         dotnet sln add API #This will bind the API to the solution
 
-#Run the command to set HTTPS certificate for localserver
+# Run the command to set HTTPS certificate for localserver
 dotnet dev-certs https --trust
 dotnet dev-certs https --clean #to try again
 
-
-#Now Run
+# Now Run
         ng new MyAngularApp #MyAngularApp can be replaced by any Name you Prefer
 
-#GoBack to Solution Folder
+# GoBack to Solution Folder
         npm install -g @angular/cli #install nmp package
 
 
-#GoBack to MyAngularApp
+# GoBack to MyAngularApp
            ng serve
 
-webAPI     commands dotnet build / dotnet run
-classlib   commands ng serve
+# webAPI     commands dotnet build / dotnet run
+# classlib   commands ng serve
 
 
 # In the appsettings.Development.json add the following
-,
+
   "ConnectionStrings": {
     "DefaultConnection": "Data Source=devpulse.db"
 
 # Install dotnet ef from nuget.org
-#The Entity Framework Core tools help with design-time development tasks. They're #primarily used to manage Migrations and to scaffold a DbContext and entity types by #reverse engineering the schema of a database.
-#This package, dotnet-ef is for cross-platform command line tooling that can be used #anywhere.
+# The Entity Framework Core tools help with design-time development tasks. They're #primarily used to manage Migrations and to scaffold a DbContext and entity types by #reverse engineering the schema of a database.
+# This package, dotnet-ef is for cross-platform command line tooling that can be used #anywhere.
 dotnet tool install --global dotnet-ef --version 9.0.1
 # Must match major version of our project
 # Commands:
@@ -41,7 +40,7 @@ dotnet tool install --global dotnet-ef --version 9.0.1
 #  dbcontext   Commands to manage DbContext types.
 #  migrations  Commands to manage migrations.
 type dotnet ef migrations -h for the commands
-#Commands:
+# Commands:
 #  add                        Adds a new migration.
 #  bundle                     Creates an executable to update the database.
 #  has-pending-model-changes  Checks if any changes have been made to the model since the #last migration.
@@ -142,3 +141,28 @@ ng g s _services/account --skip-tests
 # Now what if a user can sneak in to the url directly like "https://localhost:4200/members" so we need to create a route gaurd for now great a _gaurds foulder to have all the authrizations for all routes      ng g g _guards/auth --dry-run
 
 # use for free theames https://bootswatch.com/ and to use the theames simply install using the "npm i bootswatch" command and add "node_modules/bootswatch/dist/darkly/bootstrap.min.css" in the angular.json file after the existing bootstrap files. 
+
+# ErrorHandling / API middleware / Angular Interceptor / Troubleshooting exceptions
+
+# API side error handling#
+# Create a buggyController to test all possible error like "Authorization error, not-found, Server error, Bad-Request (http 400 to 499 errors) typically these are user side errors", Validation error (can be tested by using the "register new user")
+
+# Create a APIException class to handle the error like statuscode, message or any details such as stack to populate it to the client. Client can use this information to notify the user of the error and what action the user need to take to resolve it
+
+# creat an exception middleware pipeline (also varies on prod/dev mode) returns json request
+# in order to use the middleware we need to add it in the program.cs and must be at the top of the pipeline
+
+
+# CLIENT side error handling#
+# Create a component for testing all possible errors using the buggyController.
+
+# Intercepts http requests either way out or way back from API server. On the way back we can intercept the request to see if there is any error with http request. Interceptor can catch it and we can do somthing in the user interface to show these errors
+
+# In the app.config.ts for the http client provider pass the withInterceptors([errorInterceptor])
+
+# Validating errors test in the test-errors-component for the 400validationerror store the error array in a string array and in the 400validationerror method. This can be used to dhow a detailed error information. In this example use it just under the error testing buttons in the test-errors.component.html
+
+# Handling Not-Found. Just create simple pages with the error a routerlink to go back to the home page. Finally set then in the routes.
+
+# Handling Server-Error. This is a classical example of using constructor in a component class since this is the only place we can accessing the "navigationextras"
+
