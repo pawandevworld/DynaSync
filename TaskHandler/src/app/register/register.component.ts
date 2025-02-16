@@ -1,6 +1,7 @@
 import { Component, inject, input, output } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { AccountService } from '../_services/account.service';
+import { ToastrService } from 'ngx-toastr';
 
 @Component({
   selector: 'app-register',
@@ -11,7 +12,7 @@ import { AccountService } from '../_services/account.service';
 export class RegisterComponent {
   //Injecting the account service needed to register a user
   private accountService = inject(AccountService);
-
+  private toastr = inject(ToastrService);
   //since child component is receiving somthing from parent component
   //we need to use the @Input() decorator
   //@Input() usersFromHomeComponent: any;
@@ -36,7 +37,7 @@ export class RegisterComponent {
           console.log(response);
           this.cancel();
         },
-        error: error => console.log(error)
+        error: error => this.toastr.error(error.error)
     })
   }
 
