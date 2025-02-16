@@ -136,3 +136,9 @@ ng g s _services/account --skip-tests
 # use localStorage to save token information in the local client storage (like registery in lagacy code)
 
 # NOTE when creating a new component in the ts file under the @Components, under imports must include FormModule
+
+# For validations on the app use njx toastr goto (https://www.npmjs.com/package/ngx-toastr)   Check under install and use the provided cli command to install toastrservice "npm install ngx-toastr" and add the css to angular.json "node_modules/ngx-toastr/toastr.css" under the styles and include the provide parameter in the app.config.ts 
+
+# Now what if a user can sneak in to the url directly like "https://localhost:4200/members" so we need to create a route gaurd for now great a _gaurds foulder to have all the authrizations for all routes      ng g g _guards/auth --dry-run
+
+# use for free theames https://bootswatch.com/ and to use the theames simply install using the "npm i bootswatch" command and add "node_modules/bootswatch/dist/darkly/bootstrap.min.css" in the angular.json file after the existing bootstrap files. 
