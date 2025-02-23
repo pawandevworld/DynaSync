@@ -7,7 +7,17 @@ namespace DevPulse.Entities
         public required string UserName { get; set; }
         public required string LastName { get; set; }
         public required string FirstName { get; set; }
-        public required byte[] PasswordHash { get; set; }
-        public required byte[] PasswordSalt { get; set; }
+
+        //Adding this property creates an error in the AccountController
+        public required string KnownAs { get; set; }
+
+        public byte[] PasswordHash { get; set; } = [];
+        public byte[] PasswordSalt { get; set; } = [];
+
+        public DateTime Created { get; set; } = DateTime.UtcNow;
+        public DateTime LastActive { get; set; } = DateTime.UtcNow;
+
+        public List<Job> Jobs { get; set; } = [];
+               
     }
 }

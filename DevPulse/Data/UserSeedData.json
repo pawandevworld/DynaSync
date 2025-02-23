@@ -1,0 +1,261 @@
+[
+    {
+      "FirstName": "Pawan",
+      "LastName": "Sharma",
+      "KnownAs": "Pawan",
+      "UserName": "Pawan",
+      "Created": "2019-06-06",
+      "LastActive": "2020-06-13",
+      "Jobs": [
+        {
+          "Type": "LOPA",
+          "AssignedBy": "SS",
+          "Description": "Bug Fix",
+          "Details": "Fixed issue with login form.",
+          "Status": "completed",
+          "Priority": "high",
+          "StartDate": "2024-07-26",
+          "EndDate": "2024-10-28",
+          "PublicId": null
+        },
+        {
+          "Type": "ALC",
+          "AssignedBy": "Parmi",
+          "Description": "New Feature",
+          "Details": "Implemented user authentication.",
+          "Status": "in progress",
+          "Priority": "medium",
+          "StartDate": "2024-07-25",
+          "EndDate": "2024-10-01",
+          "PublicId": null
+        },
+        {
+          "Type": "LXService",
+          "AssignedBy": "Francis",
+          "Description": "Release Notes",
+          "Details": "Documented v1.0 release.",
+          "Status": "completed",
+          "Priority": "low",
+          "StartDate": "2024-07-20",
+          "EndDate": "2024-10-22",
+          "PublicId": null
+        }
+      ]
+    },
+    {
+      "FirstName": "Parminder",
+      "LastName": "Bagga",
+      "KnownAs": "Parmi",
+      "UserName": "Parmi",
+      "Created": "2019-01-08",
+      "LastActive": "2020-05-12",
+      "Jobs": [
+        {
+          "Type": "LOPA",
+          "AssignedBy": "SS",
+          "Description": "Bug Fix",
+          "Details": "Fixed issue with login form.",
+          "Status": "completed",
+          "Priority": "high",
+          "StartDate": "2024-07-26",
+          "EndDate": "2024-10-28",
+          "PublicId": null
+        },
+        {
+          "Type": "ALC",
+          "AssignedBy": "Parmi",
+          "Description": "New Feature",
+          "Details": "Implemented user authentication.",
+          "Status": "in progress",
+          "Priority": "medium",
+          "StartDate": "2024-07-25",
+          "EndDate": "2024-10-01",
+          "PublicId": null
+        },
+        {
+          "Type": "LXService",
+          "AssignedBy": "Francis",
+          "Description": "Release Notes",
+          "Details": "Documented v1.0 release.",
+          "Status": "completed",
+          "Priority": "low",
+          "StartDate": "2024-07-20",
+          "EndDate": "2024-10-22",
+          "PublicId": null
+        }
+      ]
+    },
+    {
+      "FirstName": "Kif",
+      "LastName": "Lee",
+      "KnownAs": "Kif",
+      "UserName": "Kif",
+      "Created": "2019-01-08",
+      "LastActive": "2020-05-12",
+      "Jobs": [
+        {
+          "Type": "LOPA",
+          "AssignedBy": "SS",
+          "Description": "Bug Fix",
+          "Details": "Fixed issue with login form.",
+          "Status": "completed",
+          "Priority": "high",
+          "StartDate": "2024-07-26",
+          "EndDate": "2024-10-28",
+          "PublicId": null
+        },
+        {
+          "Type": "ALC",
+          "AssignedBy": "Parmi",
+          "Description": "New Feature",
+          "Details": "Implemented user authentication.",
+          "Status": "in progress",
+          "Priority": "medium",
+          "StartDate": "2024-07-25",
+          "EndDate": "2024-10-01",
+          "PublicId": null
+        },
+        {
+          "Type": "LXService",
+          "AssignedBy": "Francis",
+          "Description": "Release Notes",
+          "Details": "Documented v1.0 release.",
+          "Status": "completed",
+          "Priority": "low",
+          "StartDate": "2024-07-20",
+          "EndDate": "2024-10-22",
+          "PublicId": null
+        }
+      ]
+    },
+    {
+      "FirstName": "Dhairyasheel",
+      "LastName": "Jadhav",
+      "KnownAs": "Dhiru",
+      "UserName": "Dhiru",
+      "Created": "2019-01-08",
+      "LastActive": "2020-05-12",
+      "Jobs": [
+        {
+          "Type": "LOPA",
+          "AssignedBy": "SS",
+          "Description": "Bug Fix",
+          "Details": "Fixed issue with login form.",
+          "Status": "completed",
+          "Priority": "high",
+          "StartDate": "2024-07-26",
+          "EndDate": "2024-10-28",
+          "PublicId": null
+        },
+        {
+          "Type": "ALC",
+          "AssignedBy": "Parmi",
+          "Description": "New Feature",
+          "Details": "Implemented user authentication.",
+          "Status": "in progress",
+          "Priority": "medium",
+          "StartDate": "2024-07-25",
+          "EndDate": "2024-10-01",
+          "PublicId": null
+        },
+        {
+          "Type": "LXService",
+          "AssignedBy": "Francis",
+          "Description": "Release Notes",
+          "Details": "Documented v1.0 release.",
+          "Status": "completed",
+          "Priority": "low",
+          "StartDate": "2024-07-20",
+          "EndDate": "2024-10-22",
+          "PublicId": null
+        }
+      ]
+    },
+    {
+      "FirstName": "Shashadri",
+      "LastName": "Sankar",
+      "KnownAs": "SS",
+      "UserName": "SS",
+      "Created": "2019-01-08",
+      "LastActive": "2020-05-12",
+      "Jobs": [
+        {
+          "Type": "LOPA",
+          "AssignedBy": "SS",
+          "Description": "Bug Fix",
+          "Details": "Fixed issue with login form.",
+          "Status": "completed",
+          "Priority": "high",
+          "StartDate": "2024-07-26",
+          "EndDate": "2024-10-28",
+          "PublicId": null
+        },
+        {
+          "Type": "ALC",
+          "AssignedBy": "Parmi",
+          "Description": "New Feature",
+          "Details": "Implemented user authentication.",
+          "Status": "in progress",
+          "Priority": "medium",
+          "StartDate": "2024-07-25",
+          "EndDate": "2024-10-01",
+          "PublicId": null
+        },
+        {
+          "Type": "LXService",
+          "AssignedBy": "Francis",
+          "Description": "Release Notes",
+          "Details": "Documented v1.0 release.",
+          "Status": "completed",
+          "Priority": "low",
+          "StartDate": "2024-07-20",
+          "EndDate": "2024-10-22",
+          "PublicId": null
+        }
+      ]
+    },
+    {
+      "FirstName": "Francis",
+      "LastName": "Laky",
+      "KnownAs": "Laky",
+      "UserName": "Laky",
+      "Created": "2019-01-08",
+      "LastActive": "2020-05-12",
+      "Jobs": [
+        {
+          "Type": "LOPA",
+          "AssignedBy": "SS",
+          "Description": "Bug Fix",
+          "Details": "Fixed issue with login form.",
+          "Status": "completed",
+          "Priority": "high",
+          "StartDate": "2024-07-26",
+          "EndDate": "2024-10-28",
+          "PublicId": null
+        },
+        {
+          "Type": "ALC",
+          "AssignedBy": "Parmi",
+          "Description": "New Feature",
+          "Details": "Implemented user authentication.",
+          "Status": "in progress",
+          "Priority": "medium",
+          "StartDate": "2024-07-25",
+          "EndDate": "2024-10-01",
+          "PublicId": null
+        },
+        {
+          "Type": "LXService",
+          "AssignedBy": "Francis",
+          "Description": "Release Notes",
+          "Details": "Documented v1.0 release.",
+          "Status": "completed",
+          "Priority": "low",
+          "StartDate": "2024-07-20",
+          "EndDate": "2024-10-22",
+          "PublicId": null
+        }
+      ]
+    }
+  ]
+  

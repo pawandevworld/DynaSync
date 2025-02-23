@@ -166,3 +166,7 @@ ng g s _services/account --skip-tests
 
 # Handling Server-Error. This is a classical example of using constructor in a component class since this is the only place we can accessing the "navigationextras"
 
+# Now that we have added Jobs entity and created a extension to calculate age of the job in day we can not do the migration and update the database with new tables and fields by usign the following command in the API
+# "dotnet ef migrations add UpdateUserJobEntity" if any error then type dotnet build to see errors or simply use "dotnet ef migrations remove" to undo the action
+
+# Not that we have seed data available we have to first delete our old database if any There are two # ways to delete the data. 1 Delete amnualy the .db file or use the command Line in the API folder "dotnet ef database drop"

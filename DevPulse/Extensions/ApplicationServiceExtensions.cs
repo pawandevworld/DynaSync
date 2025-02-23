@@ -24,12 +24,14 @@ public static class ApplicationServiceExtensions
         // cache data or maintain a state
         //2 add services.AddTransient that is created each time its requested from the service container. 
         // Good for lightweight stateless services
-        //3 add services.AddScoped thar is created once per client request (HttpRequest) like login in is a request
+        //3 add services.AddScoped that is created once per client request (HttpRequest) like login in is a request
         //we can also use the following 
         // services.AddScoped<TokenService>();
         // but its recommended to use this as TokenService is binded with ITokenService
         services.AddScoped<ITokenService, TokenService>();
-
+        services.AddScoped<IUserRepository, UserRepository>();
+        //For mappers
+        services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
         return services;
 
     }
